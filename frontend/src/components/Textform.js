@@ -43,7 +43,7 @@ const Login=({setloginStatus  })=> {
     const err=validation(values);
     setErrors(err)
 if(err.name==="" && err.email==="" && err.password===""){
-    fetch("http://localhost:8081/Signup", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/Signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ if(err.name==="" && err.email==="" && err.password===""){
     setErrors(err)
     if( err.email==="" && err.password===""){
 
-    fetch("http://localhost:8081/Login", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/Login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
