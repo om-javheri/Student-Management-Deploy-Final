@@ -18,7 +18,7 @@ export default function Concert() {
     const handleSubmit = (e) => {
       e.preventDefault();
   
-      fetch("http://localhost:8081/Edit2", {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/Edit2`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function Concert() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch('http://localhost:8081/ShowAndIdDown');
+          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/ShowAndIdDown`);
           
           
         } catch (error) {
@@ -74,7 +74,7 @@ export default function Concert() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch('http://localhost:8081/ShowAndId');
+          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/ShowAndId`);
           const data = await response.json();
           if (Array.isArray(data)) {
          

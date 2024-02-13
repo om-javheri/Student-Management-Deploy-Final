@@ -19,7 +19,7 @@ export default function Concert() {
     const err=validation(values);
     setErrors(err)
     if(err.name==="" && err.email==="" && err.password===""){
-    fetch("http://localhost:8081/Create", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/Create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

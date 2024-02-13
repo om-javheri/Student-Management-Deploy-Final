@@ -6,7 +6,7 @@ export default function Created() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8081/Created');
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Created`);
         const data = await response.json();
         if (Array.isArray(data)) {
           setStudentData(data);

@@ -9,7 +9,7 @@ function ShowAndId() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8081/ShowAndId');
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/ShowAndId`);
         const data = await response.json();
         if (Array.isArray(data)) {
           setStudentData(data);
@@ -40,7 +40,7 @@ function ShowAndId() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:8081/Edit2/${values.id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/Edit2/${values.id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

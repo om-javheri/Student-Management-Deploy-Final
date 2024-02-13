@@ -10,7 +10,7 @@ function Delete2() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8081/ShowAndId');
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/ShowAndId`);
         const data = await response.json();
         if (Array.isArray(data)) {
           setStudentData(data);

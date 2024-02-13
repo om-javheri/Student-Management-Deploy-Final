@@ -9,7 +9,7 @@ function IndividualStudent() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8081/ShowAndId');
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/ShowAndId`);
         const data = await response.json();
         if (Array.isArray(data)) {
           setConcertData(data);
@@ -39,7 +39,7 @@ function IndividualStudent() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch('http://localhost:8081/ShowAndIdDown');
+          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/ShowAndIdDown`);
           
           
         } catch (error) {
